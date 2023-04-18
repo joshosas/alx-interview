@@ -2,10 +2,12 @@
 """
 A file containing pascal_triangle function
 """
-if __name__ == "__main__":
+    
+    
     def pascal_triangle(n):
         """
         Implements the Pascal Triangle Logic
+        given an integer
         """
         if n <= 0:
             return []
