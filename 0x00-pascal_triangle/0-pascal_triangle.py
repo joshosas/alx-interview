@@ -10,7 +10,7 @@ A file containing pascal_triangle function
         given an integer
         """
         if n <= 0:
-            return []
+            return [[]]
         
         triangle = [[1]]
         for i in range(1, n):
