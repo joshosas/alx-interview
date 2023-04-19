@@ -9,7 +9,7 @@ A file containing pascal_triangle function
         Implements the Pascal Triangle Logic
         given an integer
         """
-        if n <= 0:
+        if type(n) is not int or n <= 0:
             return [[]]
         
         triangle = [[1]]
