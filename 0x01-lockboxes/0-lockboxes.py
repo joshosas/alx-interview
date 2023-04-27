@@ -2,6 +2,7 @@
 '''A module for working with Lockboxes.
 '''
 
+
 def canUnlockAll(boxes):
     '''
     Returns True if it is possible to open all boxes
