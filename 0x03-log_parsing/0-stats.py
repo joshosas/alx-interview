@@ -41,3 +41,6 @@ for line in sys.stdin:
                          401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
 
         line_count = 0
+
+if __name__ == '__main__':
+    run()
