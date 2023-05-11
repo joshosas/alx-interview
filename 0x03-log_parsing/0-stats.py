@@ -3,6 +3,7 @@
    returning Total file size and Number of lines by status code
 '''
 import sys
+import re
 
 
 status_counts = {200: 0, 301: 0, 400: 0,
@@ -13,7 +14,8 @@ line_count = 0
 for line in sys.stdin:
     # Parse the line using string methods and regular expressions
     match = re.match(
-        r'^([\d.]+) - \[(.*)\] "GET /projects/260 HTTP/1\.1" (\d+) (\d+)$', line.strip())
+        r'^([\d.]+) - \[(.*)\] "GET /projects/260 HTTP/1\.1" (\d+) (\d+)$',
+        line.strip())
 
     if not match:
         continue
