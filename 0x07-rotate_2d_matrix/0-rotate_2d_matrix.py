@@ -1,4 +1,11 @@
+#!/usr/bin/python3
+"""2D matrix rotation module.
+"""
+
+
 def rotate_2d_matrix(matrix):
+    """Rotates an m by n 2D matrix in place.
+    """
     n = len(matrix)  # Gets the size(length) of the matrix
 
     # Transpose the matrix
