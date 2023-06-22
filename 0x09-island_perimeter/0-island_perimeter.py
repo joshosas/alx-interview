@@ -1,27 +1,26 @@
 #!/usr/bin/python3
-"""Silving a question that involves calculating
-   the perimeter of an island represented by a grid
+"""A module for calculating Island perimeter
+   Interview question with Python.
 """
 
 
 def island_perimeter(grid):
-    if not grid or not grid[0]:
-        return 0
+    """calculates the perimeter of an island(without lakes).
+    """
+    perimeter = 0
     if type(grid) != list:
         return 0
-
-    rows, cols = len(grid), len(grid[0])
-    perimeter = 0
-
-    for row in range(rows):
-        for col in range(cols):
-            if grid[row][col] == 1:
-                perimeter += 4
-
-                # Check adjacent cells
-                if row > 0 and grid[row - 1][col] == 1:  # Up
-                    perimeter -= 2
-                if col > 0 and grid[row][col - 1] == 1:  # Left
-                    perimeter -= 2
-
+    n = len(grid)
+    for i, row in enumerate(grid):
+        l = len(row)
+        for j, k in enumerate(row):
+            if k == 0:
+                continue
+            edge = (
+                i == 0 or (len(grid[i - 1]) > j and grid[i - 1][j] == 0),
+                j == l - 1 or (l > j + 1 and row[j + 1] == 0),
+                i == n - 1 or (len(grid[i + 1]) > j and grid[i + 1][j] == 0),
+                j == 0 or row[j - 1] == 0,
+            )
+            perimeter += sum(edge)
     return perimeter
