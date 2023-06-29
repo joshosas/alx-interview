@@ -20,9 +20,9 @@ def isWinner(x, nums):
             prime_numbers[j - 1] = False
 
     for _, n in zip(range(x), nums):
-        prime_numbers_count = len(list(filter(lambda x: x, prime_numbers[0: n])))
-        Ben_wins += prime_numbers_count % 2 == 0
-        Maria_wins += prime_numbers_count % 2 == 1
+        prime_nums_count = len(list(filter(lambda x: x, prime_numbers[0: n])))
+        Ben_wins += prime_nums_count % 2 == 0
+        Maria_wins += prime_nums_count % 2 == 1
     if Maria_wins == Ben_wins:
         return None
     return 'Maria' if Maria_wins > Ben_wins else 'Ben'
